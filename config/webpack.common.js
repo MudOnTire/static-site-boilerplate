@@ -28,7 +28,7 @@ module.exports = {
     publicPath: "/",
   },
   optimization: {
-    minimize: false,
+    minimize: production,
   },
   resolve: {
     alias: {
