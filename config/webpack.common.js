@@ -118,11 +118,7 @@ module.exports = {
       jQuery: "jquery",
     }),
     new webpack.DefinePlugin({
-      ENV_STRING: JSON.stringify("this is a env string"),
-      ENV_OBJECT: JSON.stringify({ name: "mudontire" }),
-      ENV_BOOLEAN: true,
-      ENV_BOOLEAN_STR: JSON.stringify(true),
-      "typeof window": JSON.stringify("object"),
+      PRODUCTION: production
     }),
     // html webpack plugin
     ...pages.map((page) => {
@@ -135,7 +131,7 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: "static",
-      openAnalyzer: false,
+      openAnalyzer: true,
     }),
   ],
   externals: {
