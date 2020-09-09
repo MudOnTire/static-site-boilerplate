@@ -20,8 +20,6 @@ for (const page of pages) {
   entry[page] = path.resolve(__dirname, `../src/pages/${page}/index.js`);
 }
 
-console.log("entry===", entry);
-
 module.exports = {
   entry,
   output: {
@@ -121,7 +119,7 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: "static",
-      openAnalyzer: false,
+      openAnalyzer: production,
     }),
   ],
   externals: {
