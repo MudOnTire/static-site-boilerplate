@@ -11,13 +11,13 @@ const { TARGET } = process.env;
 const production = TARGET === "production";
 
 // entries
-const entry = { main: path.resolve(__dirname, "../src/index.js") };
+const entry = { main: path.resolve(__dirname, "../src/index.ts") };
 // pages
 const pages = fs
   .readdirSync(path.resolve(__dirname, "../src/pages"))
   .filter((p) => p !== ".DS_Store");
 for (const page of pages) {
-  entry[page] = path.resolve(__dirname, `../src/pages/${page}/index.js`);
+  entry[page] = path.resolve(__dirname, `../src/pages/${page}/index.ts`);
 }
 
 console.log("entry===", entry);
@@ -36,6 +36,7 @@ module.exports = {
     alias: {
       Src: path.resolve(__dirname, "../src"),
     },
+    extensions: ['.ts', '.js']
   },
   module: {
     rules: [
@@ -53,7 +54,16 @@ module.exports = {
         ],
       },
       {
-        test: /\.js?$/,
+        test: /\.tsx$/,
+        exclude: [/node_modules/],
+        use: [
+          {
+            loader: "ts-loader",
+          },
+        ],
+      },
+      {
+        test: /\.js$/,
         exclude: [
           /node_modules/,
           path.resolve(__dirname, "../src/common/libs"),
