@@ -8,6 +8,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.resolve(__dirname, "../dist"),
     index: "index.html",
+    open: true,
     hot: true,
   },
 });
