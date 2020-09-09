@@ -1,5 +1,5 @@
 <h1 align="center">
-🚀🚀🚀 An easy to use multipage static site boilerplate. 
+  An easy to use multipage static site boilerplate. 
 </h1>
 
 <div align="center">
