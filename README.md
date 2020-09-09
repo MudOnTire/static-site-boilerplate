@@ -6,19 +6,25 @@
   <img src="./public/demo.png"/>
 </div>
 
-# 📦 Install dependencies
+# Usage
+
+**Option 1: clone or download this repository**
+
+**Option 2: use [static-site-generator-cli](https://github.com/MudOnTire/static-site-generator-cli/tree/master) tool**
+
+## 📦 Install dependencies
 
 ```sh
 yarn
 ```
 
-# 🔨 Dev
+## 🔨 Dev
 
 ```sh
 yarn start
 ```
 
-# 🌍 Build
+## 🌍 Build
 
 ```sh
 yarn build
